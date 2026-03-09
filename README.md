@@ -1,16 +1,80 @@
-# React + Vite
+# React Jobs 2026
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and beginner-friendly job listing app built with React, Vite, React Router, and Tailwind CSS.
 
-Currently, two official plugins are available:
+The app lets you:
+- See a home page
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse all jobs
 
-## React Compiler
+- View individual job details
+- Add new jobs
+- Edit existing jobs
+- Delete jobs
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Data is served from a local `json-server` API using `src/jobs.json`.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19
+- Vite 7
+- React Router
+- Tailwind CSS
+- json-server (mock backend)
+- React Toastify
+
+## Prerequisites
+
+- Node.js 18+
+- npm
+
+## Installation
+
+```bash
+npm install
+```
+
+## Run The Project (Development)
+
+This project uses two processes:
+- Frontend app (Vite) on `http://localhost:3000`
+- Mock API (`json-server`) on `http://localhost:3200`
+
+## Run these in separate terminals:
+
+```bash
+npm run server
+```
+
+```bash
+npm run dev
+```
+
+The frontend calls `/api/*` routes, and Vite proxies them to `http://localhost:3200`.
+
+## Available Scripts
+
+```bash
+npm run dev      # Start Vite dev server
+npm run server   # Start json-server API from src/jobs.json on port 3200
+npm run build    # Build for production
+npm run preview  # Preview production build locally
+npm run lint     # Run ESLint
+```
+
+## Project Structure
+
+```text
+src/
+	components/    Reusable UI components
+	layouts/       Shared page layout
+	pages/         Route pages (Home, Jobs, Add, Edit, Job Details)
+	services/      Loader and CRUD service functions
+	jobs.json      Local mock database for json-server
+```
+
+## Notes
+
+- If jobs are not loading, make sure `npm run server` is running on port `3200`.
+- Vite is configured to run on port `3000` and auto-open the browser.
+
