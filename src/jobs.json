@@ -83,6 +83,21 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "8417",
+      "title": "Tets",
+      "type": "Full-Time",
+      "location": "Pune",
+      "description": "dsadda",
+      "salary": "$50K - 60K",
+      "company": {
+        "name": "JPMC",
+        "description": "Tests Desscs",
+        "contactEmail": "abc@test.com",
+        "contactPhone": "dasdas"
+      }
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
