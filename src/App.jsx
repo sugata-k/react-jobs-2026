@@ -13,36 +13,10 @@ import jobLoader from './services/jobLoader';
 import NotFoundPage from './pages/NotFoundPage';
 import AddJobPage from './pages/AddJobPage';
 import EditJobPage from './pages/EditJobPage';
+import { addJob, deleteJob, updateJob } from './services/crud.service';
 
 const App = () => {
-  const addJob = async (newJob) => {
-    const res = await fetch('/api/jobs', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newJob)
-    });
-    return;
-  }
-
-  const deleteJob = async (id) => {
-    const res = await fetch(`/api/jobs/${id}`, {
-      method: 'DELETE',
-    });
-    return;
-  }
-
-  const updateJob = async (updatedJob) => {
-    const res = await fetch(`/api/jobs/${updatedJob.id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(updatedJob)
-    });
-    return;
-  }
+  
 
   const router = createBrowserRouter(
     createRoutesFromElements(
