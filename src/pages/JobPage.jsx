@@ -1,12 +1,10 @@
 // import { useState, useEffect } from "react";
-import { useParams, useLoaderData, Link, useNavigate } from "react-router-dom";
-import Spinner from "../components/Spinner";
+import { useLoaderData, Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const JobPage = ({ deleteJob }) => {
     const navigate = useNavigate();
-    const { id } = useParams();
     const job = useLoaderData();
     const onDeleteClick = async (jobId) => {
         const confirmDelete = window.confirm('Are you sure you want to delete this job?');
@@ -17,31 +15,6 @@ const JobPage = ({ deleteJob }) => {
         toast.success('Job deleted successfully');
         navigate('/jobs');
     }
-    // const [job, setJob] = useState(null);
-    // const [loading, setLoading] = useState(true);
-
-    // useEffect(() => {
-    //     const fetchJob = async () => {
-    //         try {
-    //             const apiUrl = `/api/jobs/${id}`;
-    //             const res = await fetch(apiUrl);
-    //             const data = await res.json();
-    //             setJob(data);
-    //         }
-    //         catch (error) {
-    //             console.error('Error fetching job', error);
-    //         }
-    //         finally {
-    //             setLoading(false);
-    //         }
-    //     };
-    //     fetchJob();
-    // }, []);
-
-
-
-    // return loading ? <Spinner /> :
-    //     <h1> {job.title}</h1>
 
     return (
         <>

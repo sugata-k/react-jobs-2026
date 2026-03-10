@@ -9,11 +9,12 @@ import HomePage from './pages/HomePage';
 import MainLayout from './layouts/MainLayout';
 import JobsPage from './pages/JobsPage';
 import JobPage from './pages/JobPage';
-import jobLoader from './services/jobLoader';
 import NotFoundPage from './pages/NotFoundPage';
 import AddJobPage from './pages/AddJobPage';
 import EditJobPage from './pages/EditJobPage';
-import { addJob, deleteJob, updateJob } from './services/crud.service';
+import { getJob, addJob, deleteJob, updateJob } from './services/jobsApi';
+
+const jobLoader = ({ params }) => getJob(params.id);
 
 const App = () => {
   
